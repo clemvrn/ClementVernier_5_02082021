@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="img/orinoco-favicon.png">
+    <meta name="description" content="">
+    <title>Orinoco - Produit</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+   
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- RALEWAY GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-white shadow">
+            <div class="container col-10 px-0">
+              <a class="navbar-brand" href="index.html"><img src="img/logo-orinoco-nav.png" alt="Logo Orinoco" width="189,25" height="49,75"></a>
+                <div class="d-flex">
+                    <a href="panier.html" class="img-logo-nav">
+                        <i class="fas fa-shopping-cart text-brown logo-nav"></i>
+                    </a>
+                </div>
+            </div>
+          </nav>
+    </header>
+    <main>
+        <section class="section-produit mb-5">
+            <div class="container-fluid justify-content-center px-0" id="message-success">
+                <div class="container-fluid bg-success d-flex justify-content-center align-items-center p-0 m-0">
+                        <p class="text-white fw-bold py-3 m-0">Le produit a bien été ajouté au panier.</p>
+                </div>
+            </div>
+            <div class="container-fluid d-flex justify-content-center px-0">
+                <div class="container col-10 px-0 mx-0 retour mt-4">
+                        <a href="index.html"><i class="fas fa-2x text-brown fa-arrow-circle-left"></i></a>
+                </div>
+            </div>
+            <div class="container-fluid d-flex justify-content-center px-0">
+                <div class="container col-10 container-produit d-flex justify-content-between bg-brown rounded mx-0 my-4">
+                    <div class="container-img-produit">
+                        <img src="" id="teddie-img" class="img-produit rounded" alt="Peluche">
+                    </div>
+                    <div class="produit d-flex flex-column justify-content-between text-white">
+                        <div>
+                            <h1 class="title-produit text-center fw-bold mb-3" id="teddie-name"></h1>
+                            <p class="prix-produit fw-bold" id="teddie-price"></p>
+                            <p class="description-produit" id="teddie-description"></p>
+                        </div>
+                        <div class="mb-3">
+                            <label for="color-select">Couleur : </label>
+                            <select class="form-select form-select-sm" name="colors" id="color-select">
+                                <option selected>Choix couleur</option>
+                                <option value="marron">Marron</option>
+                                <option value="beige">Beige</option>
+                                <option value="rose">Rose</option>
+                                <option value="jaune">Jaune</option>
+                                <option value="blanc">Blanc</option>
+                                <option value="gris">Gris</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label for="color-select">Quantité : </label>
+                            <select class="form-select form-select-sm" name="colors" id="color-select">
+                                <option selected>Choix quantité</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                        <div class="text-center">
+                            <button type="button" onclick="setData()" class="btn-white rounded text-uppercase">Ajouter au panier</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer bg-brown">
+        <div class="container col-10 py-4 text-center">
+            <p class="text-white mb-0">© Copyright 2021 - Orinoco -  Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="js/produit.js"></script>
+</body>
+</html>
