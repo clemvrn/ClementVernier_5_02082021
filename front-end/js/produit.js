@@ -46,6 +46,9 @@ function getTeddie(teddieId) {
 
   //Lors de l'ajout au panier du produit
   function setData() {
+    //Création de la variable de vérification
+    let setItemOk = false;
+
     //Création du produit à mettre dans le Local Storage
     let produit = {
         idProduit: getTeddieId(),
@@ -57,21 +60,33 @@ function getTeddie(teddieId) {
     //JSON.parse = convertir données JSON en object Javascript
     let produitInLocalStorage = JSON.parse(localStorage.getItem("produit"));
 
-    //Si il y a déja des produits dans le panier
-    if(produitInLocalStorage) {
-        produitInLocalStorage.push(produit);
-        //JSON.stringify = convertir object Javascript en données JSON
-        localStorage.setItem("produit", JSON.stringify(produitInLocalStorage))
+    //Si le nom ou le prix n'ont pas été récupéré on lance une erreur
+    if (produit.nomProduit == "" || produit.prixProduit == "") {
+      alert("Erreur, les informations du produit ne sont pas complètes.");
+      //Afficher le message d'erreur d'ajout au panier
+      //Changement de display
+      document.getElementById("message-error").style.display = "flex";
     }
-    //Si il n'y a pas de produits dans le panier
     else {
-        //Création du tableau de stockage des produits
-        produitInLocalStorage = [];
+      //Si il y a déja des produits dans le panier
+      if(produitInLocalStorage) {
         produitInLocalStorage.push(produit);
         //JSON.stringify = convertir object Javascript en données JSON
         localStorage.setItem("produit", JSON.stringify(produitInLocalStorage))
+        setItemOk = true;
+      }
+      //Si il n'y a pas de produits dans le panier
+      else {
+          //Création du tableau de stockage des produits
+          produitInLocalStorage = [];
+          produitInLocalStorage.push(produit);
+          //JSON.stringify = convertir object Javascript en données JSON
+          localStorage.setItem("produit", JSON.stringify(produitInLocalStorage))
+          setItemOk = true;
+      }
     }
 
+    if(setItemOk == true) {
     //Afficher le message de succès d'ajout au panier
     //Changement de display
     document.getElementById("message-success").style.display = "flex";
@@ -85,5 +100,5 @@ function getTeddie(teddieId) {
         document.getElementById('message-success').style.opacity = myopacity;
     }
     MyFadeFunction();
-
+  }
 }
