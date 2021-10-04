@@ -214,6 +214,9 @@ body {
 #message-success {
     display: none;
 }
+#message-error {
+    display: none;
+}
 
 /* PANIER */
 .container-panier {
